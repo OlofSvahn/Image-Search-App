@@ -76,7 +76,6 @@ main .pagination .prev.disabled
     color:grey;
 }
 
-
 .lightbox{
     position: fixed;
     z-index: 1000;

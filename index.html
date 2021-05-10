@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexStyle.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Index</title>
 </head>
 <body>
     <main>
-        <h1>Flickr searchr imager findr</h1>
         <form id="searchForm" name="searchForm" action="result.html" onsubmit="return Validate()">
-            <input type="text" name="searchText" id="searchText" autofocus placeholder="Search image..."
-            tabindex="1" required/> 
-            <input type="submit" value="search" class="material-icons"name="Submit">
+            <div class="searchBar">
+                <input type="text" name="searchText" class="searchBarText" id="searchText" placeholder="Search image..."
+                tabindex="1" required/> 
+                <input type="submit" value="search" class="material-icons"name="Submit">
+            </div>
             <div class="dropDowns">
                 <select name="sort" id="sort">Sort
                     <option value="" disabled selected hidden> Sort </option>
