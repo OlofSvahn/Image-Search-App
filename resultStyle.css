@@ -4,8 +4,8 @@ body{
 
 main .searchResult{
     display:grid;
-    grid-template-columns: repeat(4,200px);
-    padding: 5rem;
+    grid-template-columns: repeat(5,200px);
+    padding: 3rem;
     justify-content: center;
     align-content: center;
     grid-gap: 10px;
@@ -15,7 +15,67 @@ main .searchResult img{
     height: 200px;
     width: 200px;
     cursor: pointer;
+    animation: show .5s ease;
+    -webkit-transform: scale(1);
+    -webkit-transition-duration: 0.2s;
 }
+
+main .searchResult img:hover{
+    -webkit-transform: scale(1.06);
+    -webkit-transition-duration: 0.2s;
+}
+
+@keyframes show{
+    0%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*main .searchResult img.hide{
+    display: none;
+}
+
+main .searchResult img.show{
+    display: block;
+}*/
+
+main .pagination{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+main .pagination div{
+    display: inline-block;
+    padding: 15px;
+}
+
+main .pagination .page{
+    color:gray;
+}
+
+main .pagination .prev, main .pagination .next{
+    color: #000;
+    border:1px solid #000;
+    font-size: 15px;
+}
+
+main .pagination .prev.disabled
+, main .pagination .next.prev.disabled{
+    border-color: grey;
+    color:grey;
+}
+
 
 .lightbox{
     position: fixed;
