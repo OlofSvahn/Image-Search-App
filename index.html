@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Index</title>
 </head>
 <body>
     <main>
-        <form id="search" name="search" action="result.html" onsubmit="return Validate()">
-            "></form>
+        <h1>Flickr searchr imager findr</h1>
+        <form id="searchForm" name="searchForm" action="result.html" onsubmit="return Validate()">
+            <input type="text" name="searchText" id="searchText" autofocus placeholder="Search image..."
+            tabindex="1" required/> 
+            <input type="submit" value="Submit" name="Shit">
+                <div class="material-icons searchButton">search</div>
+            </input>
+        </form>
     </main>
 </body>
-    <script type="text/javascript" src="validate.js"></script>
+<script src="validate.js"></script>
 </html>
