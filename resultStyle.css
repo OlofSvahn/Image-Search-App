@@ -1,5 +1,8 @@
 body{
     margin:auto;
+    max-width: 1000px;
+    background-color: peachpuff;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 main .searchResult{
@@ -18,6 +21,7 @@ main .searchResult img{
     animation: show .5s ease;
     -webkit-transform: scale(1);
     -webkit-transition-duration: 0.2s;
+    box-shadow: 0 0 1rem rgba(82, 56, 69, 0.2);
 }
 
 main .searchResult img:hover{
@@ -84,6 +88,7 @@ main .pagination .prev.disabled
     height: 100%;
     background-color: rgba(0,0,0,0.8);
     display: none;
+    margin: auto;
 }
 
 .lightbox.active{

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="indexStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Index</title>
 </head>
@@ -17,15 +19,15 @@
                 <input type="submit" value="search" class="material-icons"name="Submit">
             </div>
             <div class="dropDowns">
-                <select name="sort" id="sort">Sort
+                <select class="sort" name="sort" id="sort">Sort
                     <option value="" disabled selected hidden> Sort </option>
                     <option value="0"> Relevance </option>
-                    <option value="1"> Date Uploaded </option>
-                    <option value="2"> Date Taken </option>
+                    <option value="1"> Uploaded </option>
+                    <option value="2"> Date </option>
                     <option value="3"> Interesting </option>
                 </select>
-                <select name="imgPerPage" id="imgPerPage">ImgPerPage
-                    <option value="" disabled selected hidden> Images Per Page </option>
+                <select class="perpage" name="imgPerPage" id="imgPerPage">ImgPerPage
+                    <option value="" disabled selected hidden> Pagehits </option>
                     <option value="0"> 10 </option>
                     <option value="1"> 25 </option>
                     <option value="2"> 50 </option>
