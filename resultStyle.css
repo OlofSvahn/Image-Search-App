@@ -31,5 +31,9 @@ main .searchResult img{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+}
+
+.lightbox img{
+    max-width: 90%;
+    max-height: 90%;
 }

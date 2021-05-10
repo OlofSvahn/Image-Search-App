@@ -13,9 +13,23 @@
         <form id="searchForm" name="searchForm" action="result.html" onsubmit="return Validate()">
             <input type="text" name="searchText" id="searchText" autofocus placeholder="Search image..."
             tabindex="1" required/> 
-            <input type="submit" value="Submit" name="Shit">
-                <div class="material-icons searchButton">search</div>
-            </input>
+            <input type="submit" value="search" class="material-icons"name="Submit">
+            <div class="dropDowns">
+                <select name="sort" id="sort">Sort
+                    <option value="" disabled selected hidden> Sort </option>
+                    <option value="0"> Relevance </option>
+                    <option value="1"> Date Uploaded </option>
+                    <option value="2"> Date Taken </option>
+                    <option value="3"> Interesting </option>
+                </select>
+                <select name="imgPerPage" id="imgPerPage">ImgPerPage
+                    <option value="" disabled selected hidden> Images Per Page </option>
+                    <option value="0"> 10 </option>
+                    <option value="1"> 25 </option>
+                    <option value="2"> 50 </option>
+                    <option value="3"> 100 </option>
+                </select>
+            </div>
         </form>
     </main>
 </body>
