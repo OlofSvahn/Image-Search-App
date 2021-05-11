@@ -17,16 +17,14 @@ const hits = [
 ]
 const searchResult = document.querySelector(".searchResult");
 const lightbox = document.querySelector(".lightbox");
+
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+
 const tnSize = "q";
 const lbSize = "b";
 
 const apikey = "b008fe0d80fecbe8e2dbdfe21b0aca32";
-
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
-/*const maxItem = 10;
-const count = 0;
-let index = 1;*/
 
 async function FetchResults ()
 {
@@ -40,19 +38,6 @@ async function FetchResults ()
         const thumbnail = document.createElement("img");
         thumbnail.src = `https://live.staticflickr.com/${server}/${id}_${secret}_${tnSize}.jpg`;
         searchResult.appendChild(thumbnail);
-
-        /*if(count >= (index * maxItem)-maxItem && count < index * maxItem)
-        {
-            console.log("in")
-            thumbnail.classList.remove("hide");
-            thumbnail.classList.add("show");
-        }
-        else
-        {
-            thumbnail.classList.remove("show");
-            thumbnail.classList.add("hide");   
-        }
-        count++;*/
     });
 
     const allImages = document.querySelectorAll(".searchResult img",);
@@ -63,7 +48,7 @@ async function FetchResults ()
             lbImg.src = image.src.replace(`_${tnSize}.jpg`, `_${lbSize}.jpg`);
             lightbox.appendChild(lbImg);
         });
-    });
+    });   
 }
 
 lightbox.addEventListener("click", e => {
