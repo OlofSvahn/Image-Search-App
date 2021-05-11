@@ -38,6 +38,7 @@ async function FetchResults ()
         const thumbnail = document.createElement("img");
         thumbnail.src = `https://live.staticflickr.com/${server}/${id}_${secret}_${tnSize}.jpg`;
         searchResult.appendChild(thumbnail);
+
     });
 
     const allImages = document.querySelectorAll(".searchResult img",);
@@ -49,6 +50,7 @@ async function FetchResults ()
             lightbox.appendChild(lbImg);
         });
     });   
+
 }
 
 lightbox.addEventListener("click", e => {
