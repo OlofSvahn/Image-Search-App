@@ -97,7 +97,7 @@ main .pagination .prev:hover, main .pagination .next:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-animation: Fade .3s ease;
+    -webkit-animation: FadeIn .3s ease;
 }
 
 .lightbox img{
@@ -106,9 +106,14 @@ main .pagination .prev:hover, main .pagination .next:hover{
     -webkit-animation: Pop .3s ease;
 }
 
-@-webkit-keyframes Fade {
+@-webkit-keyframes FadeIn {
     0%{ opacity: 0;}
     100% {opacity: 1;}
+}
+
+@-webkit-keyframes FadeOut {
+    0%{ opacity: 1;}
+    100% {opacity: 0;}
 }
 
 @-webkit-keyframes Pop {
