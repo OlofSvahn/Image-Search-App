@@ -32,7 +32,7 @@ let picsPerPageCount = 0;
 
 async function FetchResults ()
 {
-    const response = await fetch(`https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apikey}&text=${searchText}&per_page=500&sort=${sorts[sort]}&format=json&nojsoncallback=1`);
+    const response = await fetch(`https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apikey}&text=${searchText}&per_page=100&sort=${sorts[sort]}&format=json&nojsoncallback=1`);
     const data = await response.json();
 
     data.photos.photo.forEach(photo => {
@@ -45,6 +45,7 @@ async function FetchResults ()
 
         if(picCount > picsPerPageCount && picCount <= (hits[hitsPerPage]*page))
         {
+            picsPerPageCount++;
             searchResult.appendChild(thumbnail);
         }
     });
@@ -57,10 +58,24 @@ async function FetchResults ()
             lbImg.src = image.src.replace(`_${tnSize}.jpg`, `_${lbSize}.jpg`);
             lightbox.appendChild(lbImg);
         });
-    });   
-
-    picsPerPageCount += hits[hitsPerPage];
+    });
+    console.log(picsPerPageCount);
+    console.log(page);
+    picCount = 0;
 }
+
+prev.addEventListener("click", e => {
+    page--;
+    picsPerPageCount -= picsPerPageCount;
+    searchResult.innerHTML = "";
+    FetchResults();
+});
+
+next.addEventListener("click", e => {
+    page++;
+    searchResult.innerHTML = "";
+    FetchResults();
+});
 
 lightbox.addEventListener("click", e => {
     if(e.target !== e.currentTarget) 
