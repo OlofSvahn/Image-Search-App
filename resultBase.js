@@ -27,12 +27,9 @@ const lbSize = "b";
 
 const apikey = "b008fe0d80fecbe8e2dbdfe21b0aca32";
 
-let picCount = 0;
-let picsPerPageCount = 0;
-
 async function FetchResults ()
 {
-    const response = await fetch(`https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apikey}&text=${searchText}&per_page=100&sort=${sorts[sort]}&format=json&nojsoncallback=1`);
+    const response = await fetch(`https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apikey}&text=${searchText}&per_page=${hits[hitsPerPage]}&page=${page}&sort=${sorts[sort]}&format=json&nojsoncallback=1`);
     const data = await response.json();
 
     data.photos.photo.forEach(photo => {
@@ -41,13 +38,7 @@ async function FetchResults ()
         const secret = photo.secret;
         const thumbnail = document.createElement("img");
         thumbnail.src = `https://live.staticflickr.com/${server}/${id}_${secret}_${tnSize}.jpg`;
-        picCount++;
-
-        if(picCount > picsPerPageCount && picCount <= (hits[hitsPerPage]*page))
-        {
-            picsPerPageCount++;
-            searchResult.appendChild(thumbnail);
-        }
+        searchResult.appendChild(thumbnail);
     });
 
     const allImages = document.querySelectorAll(".searchResult img",);
@@ -59,14 +50,10 @@ async function FetchResults ()
             lightbox.appendChild(lbImg);
         });
     });
-    console.log(picsPerPageCount);
-    console.log(page);
-    picCount = 0;
 }
 
 prev.addEventListener("click", e => {
     page--;
-    picsPerPageCount -= picsPerPageCount;
     searchResult.innerHTML = "";
     FetchResults();
 });

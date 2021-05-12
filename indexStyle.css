@@ -37,6 +37,11 @@ main .searchBar .searchBarText{
     margin: auto;
 }
 
+main .searchBar .searchBarText:hover{
+    filter:contrast(8);
+}
+
+
 main .searchBar .searchBarText:focus{
     outline: none;
 }
@@ -79,6 +84,7 @@ main .dropDowns{
     box-shadow: 0 0 1rem rgba(82, 56, 69, 0.2);
     gap: 2rem;
 }
+
 
 main .dropDowns select:focus{
     outline: none;
