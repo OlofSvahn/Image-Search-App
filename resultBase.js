@@ -19,6 +19,7 @@ const hits = [
 const searchResult = document.querySelector(".searchResult");
 const lightbox = document.querySelector(".lightbox");
 
+let pageNumber = document.getElementById("pageId");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 
@@ -29,6 +30,7 @@ const apikey = "b008fe0d80fecbe8e2dbdfe21b0aca32";
 
 async function FetchResults ()
 {
+    pageNumber.innerText = page;
     const response = await fetch(`https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=${apikey}&text=${searchText}&per_page=${hits[hitsPerPage]}&page=${page}&sort=${sorts[sort]}&format=json&nojsoncallback=1`);
     const data = await response.json();
 
